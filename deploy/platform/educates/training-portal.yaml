@@ -1,0 +1,15 @@
+# See https://docs.edukates.io/en/latest/runtime-environment/training-portal.html
+apiVersion: training.eduk8s.io/v1alpha1
+kind: TrainingPortal
+metadata:
+  name: my-workshop
+spec:
+  portal:
+    registration:
+      type: anonymous
+  workshops:
+  - name: my-workshop
+    capacity: 1
+    reserved: 0
+    expires: 120m
+    orphaned: 5m

@@ -1,0 +1,75 @@
+# See https://docs.edukates.io/en/latest/runtime-environment/workshop-definition.html
+apiVersion: training.eduk8s.io/v1alpha2
+kind: Workshop
+metadata:
+  name: my-workshop
+spec:
+  title: My Workshop
+  description: My Workshop Description
+  vendor: eduk8s.io
+  difficulty: beginner
+  duration: 120m
+  url: https://github.com/platform-acceleration-lab/cnd-deploy-practices-eduk8s
+  content:
+    # Use the default image, one of the pre-existing ones, or you can build your own
+    # https://docs.edukates.io/en/develop/runtime-environment/workshop-definition.html#container-image-for-the-workshop
+    files: http://files.$(workshop_namespace).svc.cluster.local/workshop.tar.gz
+  session:
+    applications:
+      terminal:
+        enabled: true
+        layout: split
+      console:
+        enabled: true
+        vendor: octant
+    #dashboards:
+    # Video content can be added by linking to a Vimeo Showcase
+    #- name: Lecture
+      # url: https://vimeo.com/showcase/6259448/embed
+  environment:
+    objects:
+    - apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        name: tarball-data
+        namespace: $(workshop_namespace)
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 500Mi
+    - apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: files
+        namespace: $(workshop_namespace)
+      spec:
+        replicas: 1
+        selector:
+          matchLabels:
+            deployment: files
+        strategy:
+          type: Recreate
+        template:
+          metadata:
+            labels:
+              deployment: files
+          spec:
+            containers:
+            - name: nginx
+              image: my-workshop
+              imagePullPolicy: IfNotPresent
+    - apiVersion: v1
+      kind: Service
+      metadata:
+        name: files
+        namespace: $(workshop_namespace)
+      spec:
+        type: ClusterIP
+        ports:
+        - port: 80
+          protocol: TCP
+          targetPort: 8080
+        selector:
+          deployment: files
