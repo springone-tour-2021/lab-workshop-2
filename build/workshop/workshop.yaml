@@ -1,0 +1,9 @@
+# See https://docs.edukates.io/en/latest/workshop-content/workshop-config.html?highlight=modules#specifying-structure-of-the-content
+name: My Workshop
+
+modules:
+  activate:
+  - intro
+  - exercises/01-lab01
+  - exercises/02-lab02
+  - closure
