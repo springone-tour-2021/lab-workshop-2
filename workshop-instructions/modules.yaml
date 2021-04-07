@@ -7,6 +7,12 @@ modules:
     name: Lab 01
   exercises/02-lab02:
     name: Lab 02
+  exercises/03-lab03:
+    name: Lab 03
+  exercises/04-lab04:
+    name: Lab 04
+  exercises/05-lab05:
+    name: Lab 05
   closure:
     name: Conclusion
     exit_sign: Finish Workshop
