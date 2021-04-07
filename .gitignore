@@ -13,3 +13,5 @@
 *.swp
 .DS_Store
 .idea
+
+build/
