@@ -16,6 +16,8 @@ spec:
     files: http://files.$(workshop_namespace).svc.cluster.local/workshop.tar.gz
     image: quay.io/eduk8s/jdk11-environment:210217.091829.d9293c8
   session:
+    resources:  
+      memory: 1.7Gi 
     applications:
       terminal:
         enabled: true
