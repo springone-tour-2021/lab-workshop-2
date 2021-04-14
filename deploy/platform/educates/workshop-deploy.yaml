@@ -34,9 +34,9 @@ spec:
       dashboards:
         - name: Eureka
           protocol: http
-          url: $(session_namespace):8761
+          url: $(session_namespace).$(ingress_domain):8761
         - name: AuthGateway
-          url: $(ingress_protocol)://$(session_namespace):8181 
+          url: $(ingress_protocol)://$(session_namespace).$(ingress_domain):8181
     #dashboards:
     # Video content can be added by linking to a Vimeo Showcase
     #- name: Lecture
