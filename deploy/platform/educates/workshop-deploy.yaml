@@ -17,7 +17,7 @@ spec:
     image: quay.io/eduk8s/jdk11-environment:210217.091829.d9293c8
   session:
     resources:  
-      memory: 1.7Gi 
+      memory: 1.7Gi
     applications:
       terminal:
         enabled: true
@@ -31,12 +31,11 @@ spec:
         enabled: true
       docker:
         enabled: true
-      dashboards:
-        - name: Eureka
-          protocol: http
-          url: $(session_namespace).$(ingress_domain):8761
-        - name: AuthGateway
-          url: $(ingress_protocol)://$(session_namespace).$(ingress_domain):8181
+    ingresses:
+      - name: eureka
+          port: 8761
+      - name: authgateway
+          port: 8080
     #dashboards:
     # Video content can be added by linking to a Vimeo Showcase
     #- name: Lecture
