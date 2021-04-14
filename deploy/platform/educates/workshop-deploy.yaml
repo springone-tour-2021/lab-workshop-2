@@ -33,9 +33,10 @@ spec:
         enabled: true
       dashboards:
         - name: Eureka
-          url: http://localhost:8761
+          protocol: http
+          url: $(session_namespace):8761
         - name: AuthGateway
-          url: http://localhost:8080
+          url: $(ingress_protocol)://$(session_namespace):8181 
     #dashboards:
     # Video content can be added by linking to a Vimeo Showcase
     #- name: Lecture
