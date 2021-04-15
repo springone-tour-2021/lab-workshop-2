@@ -1,4 +1,7 @@
 #!/bin/bash
 # Install httpie
-pip install --target=/home/eduk8s/bin/httpie httpie
-alias http="/home/eduk8s/bin/httpie/bin/http"
+virtualenv /home/eduk8s/bin/httpie
+source /home/eduk8s/bin/httpie/bin/activate
+pip install httpie
+deactivate
+echo 'alias http="/home/eduk8s/bin/httpie/bin/http"' > ~/.bash_profile
