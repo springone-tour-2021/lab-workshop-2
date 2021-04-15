@@ -10,6 +10,6 @@ spec:
   workshops:
   - name: my-workshop
     capacity: 1
-    reserved: 0
+    reserved: 1
     expires: 120m
     orphaned: 5m
