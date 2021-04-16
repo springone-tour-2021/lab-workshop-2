@@ -36,10 +36,9 @@ spec:
         port: 8761
       - name: authgateway
         port: 8080
-    #dashboards:
-    # Video content can be added by linking to a Vimeo Showcase
-    #- name: Lecture
-      # url: https://vimeo.com/showcase/6259448/embed
+    dashboards:
+    - name: Eureka
+      url: http://$(session_namespace)-eureka.$(ingress_domain)/
   environment:
     objects:
     - apiVersion: v1
