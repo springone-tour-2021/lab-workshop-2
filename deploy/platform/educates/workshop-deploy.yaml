@@ -37,8 +37,10 @@ spec:
       - name: authgateway
         port: 8080
     dashboards:
-    - name: Eureka
-      url: http://$(session_namespace)-eureka.$(ingress_domain)/
+      - name: Eureka
+        url: http://$(session_namespace)-eureka.$(ingress_domain)/
+      - name: AuthGateway
+        url: http://$(session_namespace)-authgateway.$(ingress_domain)/
   environment:
     objects:
     - apiVersion: v1
