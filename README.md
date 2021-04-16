@@ -1,5 +1,22 @@
 # Educates Workshop Template Repo
 
+## Note
+After using `make` to build your application, you can check the status of the 
+resources in the namespace `eduk8s` for the status of your workshop. 
+You can check with:
+```bash
+kubectl get all -n eduk8s   
+```
+Or also check with
+```bash
+kubectl api-resoureces | grep eduk8s
+```
+It takes a few minutes for everything to install on your cluster,but when finished you can get the URL to your workshop with the following:
+```bash
+kubectl get trainingportal
+``` 
+
+
 This repo is intended to be used as an easy way to duplicate and then add
 your workshop specific content that would run on Educates.
 
