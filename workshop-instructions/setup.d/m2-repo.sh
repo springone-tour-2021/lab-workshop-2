@@ -7,7 +7,7 @@ mkdir -p $temp_dir
 cd $temp_dir
 
 # Download libraries for Color Application apps
-git clone https://github.com/ryanjbaxter/gateway-s1p-2018.git color-app
+git clone https://github.com/springone-tour-2021/gateway-s1p-2018.git color-app
 cd color-app
 # Generate a Eureka server app
 curl https://start.spring.io/starter.tgz \
