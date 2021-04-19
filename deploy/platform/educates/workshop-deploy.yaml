@@ -41,6 +41,8 @@ spec:
         url: http://$(session_namespace)-eureka.$(ingress_domain)/
       - name: AuthGateway
         url: http://$(session_namespace)-authgateway.$(ingress_domain)/
+      - name: AuthGatewayLogout
+        url: http://$(session_namespace)-authgateway.$(ingress_domain)/logout
   environment:
     objects:
     - apiVersion: v1
