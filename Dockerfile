@@ -7,3 +7,6 @@ RUN tar -czf workshop.tar.gz .
 
 FROM nginxinc/nginx-unprivileged:1.19-alpine
 COPY --from=0 /build /usr/share/nginx/html
+USER root
+RUN chown nginx:nginx -R /usr/share/nginx
+USER nginx
