@@ -21,6 +21,7 @@ installEducates() {
 
         echo "===== Setting Ingress Domain to ${IPADDRESS}.nip.io"
         kubectl set env deployment/eduk8s-operator -n eduk8s INGRESS_DOMAIN="${IPADDRESS}.nip.io"
+        kubectl set env deployment/eduk8s-operator -n eduk8s INGRESS_CLASS=nginx
     fi
 }
 
