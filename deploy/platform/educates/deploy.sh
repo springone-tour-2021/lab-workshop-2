@@ -21,6 +21,7 @@ installEducates() {
 
         echo "===== Setting Ingress Domain to ${IPADDRESS}.nip.io"
         kubectl set env deployment/eduk8s-operator -n eduk8s INGRESS_DOMAIN="${IPADDRESS}.nip.io"
+        kubectl set env deployment/eduk8s-operator -n eduk8s INGRESS_CLASS=nginx
     fi
 }
 
@@ -30,7 +31,7 @@ loadWorkshop() {
 
     echo "===== Waiting for Trainging Portal to be Running"
     while true; do
-        if [[ `kubectl get trainingportals.training.eduk8s.io --no-headers | grep ${WORKSHOP_NAME}` =~ "Running" ]]
+        if [[ $(kubectl get trainingportals.training.eduk8s.io --no-headers | grep ${WORKSHOP_NAME}) =~ "Running" ]]
         then
             echo ""
             echo "===== Training Portal is now running"
@@ -42,7 +43,7 @@ loadWorkshop() {
 
     echo "===== Waiting for files server to be ready"
     while true; do
-        if [[ `kubectl get pod --namespace=${WORKSHOP_NAME}-w01 -l deployment=files --no-headers` =~ "Running" ]]
+        if [[ $(kubectl get pod --namespace=${WORKSHOP_NAME}-w01 -l deployment=files --no-headers) =~ "Running" ]]
         then
             echo ""
             echo "===== Files server is now ready"
@@ -55,9 +56,9 @@ loadWorkshop() {
 }
 
 loadContent() {
-    WORKSHOP_FILES_POD=`kubectl get pod --namespace=${WORKSHOP_NAME}-w01 -l deployment=files --no-headers -o=custom-columns=':metadata.name'`
+    WORKSHOP_FILES_POD=$(kubectl get pod --namespace="${WORKSHOP_NAME}"-w01 -l deployment=files --no-headers -o=custom-columns=':metadata.name')
     echo "===== Copying tarball to files server"
-    # TODO - figure out to get the copy commond to copy the entire directory contents without making "build" or "html" directory
+    # TODO - figure out to get the copy command to copy the entire directory contents without making "build" or "html" directory
     kubectl cp --namespace="${WORKSHOP_NAME}-w01" "${DIR}/../../../build/workshop.tar.gz" "${WORKSHOP_FILES_POD}:/usr/share/nginx/html/"
     kubectl exec --namespace="${WORKSHOP_NAME}-w01" "${WORKSHOP_FILES_POD}" -- ls -lah /usr/share/nginx/html
     kubectl get trainingportals.training.eduk8s.io
