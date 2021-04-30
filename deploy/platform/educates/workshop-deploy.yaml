@@ -18,26 +18,20 @@ spec:
     image: docker.io/ciberkleid/eduk8s-s1t2021-wkshp2-env
   session:
     objects:
-    - apiVersion: v1
-      kind: ServiceAccount
-      metadata:
-        labels:
-          app: integration-test
-        name: spring-cloud-kubernetes-serviceaccount
     - apiVersion: rbac.authorization.k8s.io/v1
       kind: ClusterRoleBinding
       metadata:
         labels:
-          app: spring-cloud-kubernetes-core-k8s-client-it
-        name: spring-cloud-kubernetes-core-k8s-client-it:view
+          app: bluegreen
+        name: $(session_namespace)-bluegreen:view
       roleRef:
         kind: ClusterRole
         apiGroup: rbac.authorization.k8s.io
         name: namespace-reader
       subjects:
         - kind: ServiceAccount
-          name: spring-cloud-kubernetes-serviceaccount
-          namespace: $(workshop_namespace)
+          name: default
+          namespace: $(session_namespace)
     - apiVersion: rbac.authorization.k8s.io/v1
       kind: ClusterRole
       metadata:
