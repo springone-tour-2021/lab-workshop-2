@@ -17,7 +17,31 @@ spec:
 #    image: quay.io/eduk8s/jdk11-environment:210217.091829.d9293c8
     image: docker.io/ciberkleid/eduk8s-s1t2021-wkshp2-env
   session:
-    resources:  
+    objects:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      metadata:
+        labels:
+          app: bluegreen
+        name: $(session_namespace)-bluegreen:view
+      roleRef:
+        kind: ClusterRole
+        apiGroup: rbac.authorization.k8s.io
+        name: namespace-reader
+      subjects:
+        - kind: ServiceAccount
+          name: default
+          namespace: $(session_namespace)
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      metadata:
+        #      namespace: default
+        name: namespace-reader
+      rules:
+        - apiGroups: ["", "extensions", "apps"]
+          resources: ["configmaps", "pods", "services", "endpoints", "secrets"]
+          verbs: ["get", "list", "watch"]
+    resources:
       memory: 1.7Gi
     applications:
       terminal:
