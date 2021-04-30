@@ -17,7 +17,37 @@ spec:
 #    image: quay.io/eduk8s/jdk11-environment:210217.091829.d9293c8
     image: docker.io/ciberkleid/eduk8s-s1t2021-wkshp2-env
   session:
-    resources:  
+    objects:
+    - apiVersion: v1
+      kind: ServiceAccount
+      metadata:
+        labels:
+          app: integration-test
+        name: spring-cloud-kubernetes-serviceaccount
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      metadata:
+        labels:
+          app: spring-cloud-kubernetes-core-k8s-client-it
+        name: spring-cloud-kubernetes-core-k8s-client-it:view
+      roleRef:
+        kind: ClusterRole
+        apiGroup: rbac.authorization.k8s.io
+        name: namespace-reader
+      subjects:
+        - kind: ServiceAccount
+          name: spring-cloud-kubernetes-serviceaccount
+          namespace: $(workshop_namespace)
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      metadata:
+        #      namespace: default
+        name: namespace-reader
+      rules:
+        - apiGroups: ["", "extensions", "apps"]
+          resources: ["configmaps", "pods", "services", "endpoints", "secrets"]
+          verbs: ["get", "list", "watch"]
+    resources:
       memory: 1.7Gi
     applications:
       terminal:
