@@ -61,6 +61,18 @@ spec:
         port: 8761
       - name: authgateway
         port: 8080
+      - name: k8s-blueorgreenfrontend
+        protocol: http
+        host: blueorgreenfrontend.$(session_namespace).svc.cluster.local
+        port: 80
+      - name: k8s-blueorgreenauthgateway
+        protocol: http
+        host: blueorgreenauthgateway.$(session_namespace).svc.cluster.local
+        port: 80
+      - name: k8s-blueorgreengateway
+        protocol: http
+        host: blueorgreenauthgateway.$(session_namespace).svc.cluster.local
+        port: 80
     dashboards:
       - name: Eureka
         url: http://$(session_namespace)-eureka.$(ingress_domain)/
@@ -68,6 +80,12 @@ spec:
         url: http://$(session_namespace)-authgateway.$(ingress_domain)/
       - name: AuthGatewayLogout
         url: http://$(session_namespace)-authgateway.$(ingress_domain)/logout
+      - name: K8S AuthGateway
+        url: http://$(session_namespace)-k8s-blueorgreenauthgateway.$(ingress_domain)/
+      - name: K8S AuthGatewayLogout
+        url: http://$(session_namespace)-k8s-blueorgreenauthgateway.$(ingress_domain)/logout
+      - name: K8S Frontend
+        url: http://$(session_namespace)-k8s-blueorgreenfrontend.$(ingress_domain)/
   environment:
     objects:
     - apiVersion: v1
