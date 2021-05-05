@@ -2,14 +2,14 @@
 apiVersion: training.eduk8s.io/v1alpha2
 kind: Workshop
 metadata:
-  name: my-workshop
+  name: springone-tour-lab-workshop-2
 spec:
   title: My Workshop
   description: My Workshop Description
   vendor: eduk8s.io
   difficulty: beginner
   duration: 120m
-  url: https://github.com/platform-acceleration-lab/cnd-deploy-practices-eduk8s
+  url: https://github.com/springone-tour-2021/lab-workshop-2
   content:
     # Use the default image, one of the pre-existing ones, or you can build your own
     # https://docs.edukates.io/en/develop/runtime-environment/workshop-definition.html#container-image-for-the-workshop
@@ -119,8 +119,7 @@ spec:
           spec:
             containers:
             - name: nginx
-              image: my-workshop
-              imagePullPolicy: IfNotPresent
+              image: springone-tour-lab-workshop-2
     - apiVersion: v1
       kind: Service
       metadata:

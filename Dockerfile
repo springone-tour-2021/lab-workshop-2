@@ -6,7 +6,8 @@ WORKDIR /build
 RUN tar -czf workshop.tar.gz .
 
 FROM nginxinc/nginx-unprivileged:1.19-alpine
+ARG   IMAGE_SOURCE
+LABEL org.opencontainers.image.source $IMAGE_SOURCE
+WORKDIR /usr/share/nginx/html
 COPY --from=0 /build /usr/share/nginx/html
-USER root
-RUN chown nginx:nginx -R /usr/share/nginx
-USER nginx
+COPY ./deploy/platform/educates/base/workshop-deploy.yaml /home/eduk8s/resources/workshop.yaml

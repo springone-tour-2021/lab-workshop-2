@@ -1,0 +1,51 @@
+resources:
+  - ../../base
+patchesStrategicMerge:
+- |-
+  apiVersion: training.eduk8s.io/v1alpha2
+  kind: Workshop
+  metadata:
+    name: springone-tour-lab-workshop-2
+  spec:
+    environment:
+      objects:
+      - apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: files
+          namespace: $(workshop_namespace)
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
+              deployment: files
+          strategy:
+            type: Recreate
+          template:
+            metadata:
+              labels:
+                deployment: files
+            spec:
+              containers:
+              - name: nginx
+                image: localhost:5000/springone-tour-lab-workshop-2
+                volumeMounts:
+                  - mountPath: /usr/share/nginx/html
+                    name: data
+              volumes:
+              - name: data
+                emptyDir: {}
+      - apiVersion: v1
+        kind: Service
+        metadata:
+          name: files
+          namespace: $(workshop_namespace)
+        spec:
+          type: ClusterIP
+          ports:
+          - port: 80
+            protocol: TCP
+            targetPort: 8080
+          selector:
+            deployment: files
+
