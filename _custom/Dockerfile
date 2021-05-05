@@ -5,7 +5,5 @@ RUN echo "Update to bust cache: 2021-05-04 04:30 PM" && \
       cd ../blueorgreenfrontend && ./mvnw dependency:go-offline && \
       cd ../blueorgreengateway && ./mvnw dependency:go-offline && \
       cd ../authgateway && ./mvnw dependency:go-offline && \
-      cd ../eurekaserver && ./mvnw dependency:go-offline && \
-      cd ../configserver && ./mvnw dependency:go-offline && \
       cd ../.. && \
     rm -rf app
