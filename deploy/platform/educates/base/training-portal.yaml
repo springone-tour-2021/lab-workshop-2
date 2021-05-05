@@ -2,14 +2,15 @@
 apiVersion: training.eduk8s.io/v1alpha1
 kind: TrainingPortal
 metadata:
-  name: my-workshop
+  name: springone-tour-lab-workshop-2
 spec:
   portal:
     registration:
       type: anonymous
+    updates:
+      workshop: true
   workshops:
-  - name: my-workshop
+  - name: springone-tour-lab-workshop-2
     capacity: 1
-    reserved: 1
-    expires: 120m
+    expires: 180m
     orphaned: 5m
