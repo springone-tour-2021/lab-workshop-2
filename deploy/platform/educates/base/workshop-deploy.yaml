@@ -28,7 +28,7 @@ spec:
       roleRef:
         kind: ClusterRole
         apiGroup: rbac.authorization.k8s.io
-        name: namespace-reader
+        name: $(session_namespace)-namespace-reader
       subjects:
         - kind: ServiceAccount
           name: default
@@ -37,7 +37,7 @@ spec:
       kind: ClusterRole
       metadata:
         #      namespace: default
-        name: namespace-reader
+        name: $(session_namespace)-namespace-reader
       rules:
         - apiGroups: ["", "extensions", "apps"]
           resources: ["configmaps", "pods", "services", "endpoints", "secrets"]
