@@ -72,7 +72,7 @@ spec:
         port: 80
       - name: k8s-blueorgreengateway
         protocol: http
-        host: blueorgreenauthgateway.$(session_namespace).svc.cluster.local
+        host: blueorgreengateway.$(session_namespace).svc.cluster.local
         port: 80
     dashboards:
       - name: Eureka
