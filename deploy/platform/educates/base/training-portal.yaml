@@ -11,6 +11,6 @@ spec:
       workshop: true
   workshops:
   - name: springone-tour-lab-workshop-2
-    capacity: 1
+    capacity: 3
     expires: 180m
     orphaned: 5m
