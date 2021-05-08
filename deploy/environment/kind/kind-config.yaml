@@ -4,6 +4,8 @@ containerdConfigPatches:
 - |-
   [plugins."io.containerd.grpc.v1.cri".registry.mirrors."localhost:5000"]
     endpoint = ["http://kind-registry:5000"]
+  [plugins."io.containerd.grpc.v1.cri".registry.mirrors."springone-tour-lab-workshop-2-w01-s001-registry.10.0.1.44.nip.io"]
+    endpoint = ["http://springone-tour-lab-workshop-2-w01-s001-registry.10.0.1.44.nip.io"]
 nodes:
 - role: control-plane
   kubeadmConfigPatches:

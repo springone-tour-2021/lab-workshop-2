@@ -388,7 +388,7 @@ text: |
 
 ```
 
-For the color app, you only need to disable Eureka registration and fetch, since this app is not a client to any other and will not send any requests.
+For the Color App, you only need to disable Eureka registration and fetch, since this app is not a client to any other and will not send any requests.
 ```editor:insert-lines-before-line
 file: ~/color-app/blueorgreenservice/src/main/resources/application-istio.yml
 line: 1
