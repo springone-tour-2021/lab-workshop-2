@@ -3,9 +3,9 @@ During this workshop you moved an application comprising 4 Spring Boot apps to K
 *   Test the app locally to understand its behavior
     * Use Eureka for discovery
     * Use Spring Cloud Config Server for configuration
-*   "Lift & shift" the apps to Kubernetes
+*   Move the apps to Kubernetes
     * Use Spring Cloud Kubernetes for discovery
     * Use Kubernetes ConfigMaps for configuration
     * Create required Kubernetes resources (deployments, services, configmaps, ingress)
-*   Modify Kubernetes deployment
+*   Redeploy the apps to Kubernetes
     * Use Kubernetes natively for discovery (remove Spring Cloud Kubernetes)

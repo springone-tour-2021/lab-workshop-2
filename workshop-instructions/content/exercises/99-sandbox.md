@@ -44,13 +44,13 @@ done
 For the Kubernetes deployment, `EUREKA_HOST` must be the name of the eureka service.
 You can look up this value in the `eureka-service.yaml`.
 ```editor:select-matching-text
-file: ~/color-app/k8s/lift-and-shift/eureka-service.yaml
+file: ~/color-app/k8s/eureka-service.yaml
 text: name: eureka
 ```
 
 Finally, add the `EUREKA_HOST` environment variable to each deployment manifest and set the value appropriately.
 ```execute-1
-for i in k8s/lift-and-shift/*-deployment.yaml; do \
+for i in k8s/*-deployment.yaml; do \
     yq eval \
         '.spec.template.spec.containers[0].env[0].key = "EUREKA_HOST"' \
         -i $i; \
@@ -109,11 +109,11 @@ for i in "${array[@]}"
 do
     yq eval \
         '.spec.template.spec.containers[0].env[3].key = "SPRING_PROFILES_ACTIVE"' \
-        -i k8s/lift-and-shift/$i-deployment.yaml;
+        -i k8s/$i-deployment.yaml;
     
     yq eval \
         ".spec.template.spec.containers[0].env[3].value = \"$i\"" \
-        -i k8s/lift-and-shift/$i-deployment.yaml;
+        -i k8s/$i-deployment.yaml;
 done
 ```
 
@@ -123,7 +123,7 @@ At this point, you can deploy the Color Application to Kubernetes.
 
 Apply all of the yaml files to the cluster.
 ```execute-1
-kubectl apply k8s/lift-and-shift/*
+kubectl apply k8s/*
 ```
 
 Run the following command to watch the status of the pods.
@@ -149,7 +149,7 @@ You will eliminate Eureka and the Routing Gateway from the application architect
 Copy the manifests for all apps except Eureka and the Routing Gateway to a new directory.
 ```
 mkdir k8s/refactor
-cp k8s/lift-and-shift/* k8s/refactor/
+cp k8s/* k8s/refactor/
 
 rm k8s/refactor/eureka-deployment.yaml
 rm k8s/refactor/eureka-service.yaml
