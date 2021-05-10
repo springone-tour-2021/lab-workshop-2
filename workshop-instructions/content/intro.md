@@ -1,6 +1,6 @@
 During this workshop you will move an application comprising 4 Spring Boot apps to Kubernetes, including:
 
-*   Test the app locally to understand its behavior
+*   Test the apps locally to understand their behavior
     * Use Eureka for discovery
     * Use Spring Cloud Config Server for configuration
 *   Move the apps to Kubernetes
