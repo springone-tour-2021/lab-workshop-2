@@ -1,0 +1,122 @@
+# See https://docs.edukates.io/en/latest/runtime-environment/workshop-definition.html
+apiVersion: training.eduk8s.io/v1alpha2
+kind: Workshop
+metadata:
+  name: springone-tour-lab-workshop-2
+spec:
+  title: My Workshop
+  description: My Workshop Description
+  vendor: eduk8s.io
+  difficulty: beginner
+  duration: 120m
+  url: https://github.com/springone-tour-2021/lab-workshop-2
+  content:
+    # Use the default image, one of the pre-existing ones, or you can build your own
+    # https://docs.edukates.io/en/develop/runtime-environment/workshop-definition.html#container-image-for-the-workshop
+    files: http://files.$(workshop_namespace).svc.cluster.local/workshop.tar.gz
+#    image: quay.io/eduk8s/jdk11-environment:210217.091829.d9293c8
+#    image: docker.io/ciberkleid/eduk8s-s1t2021-wkshp2-env
+    image: projects.registry.vmware.com/springonetour/eduk8s-s1t2021-wkshp2-env
+  session:
+    objects:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      metadata:
+        labels:
+          app: bluegreen
+        name: $(session_namespace)-bluegreen:view
+      roleRef:
+        kind: ClusterRole
+        apiGroup: rbac.authorization.k8s.io
+        name: $(session_namespace)-namespace-reader
+      subjects:
+        - kind: ServiceAccount
+          name: default
+          namespace: $(session_namespace)
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      metadata:
+        #      namespace: default
+        name: $(session_namespace)-namespace-reader
+      rules:
+        - apiGroups: ["", "extensions", "apps"]
+          resources: ["configmaps", "pods", "services", "endpoints", "secrets"]
+          verbs: ["get", "list", "watch"]
+    resources:
+      memory: 1.7Gi
+    applications:
+      terminal:
+        enabled: true
+        layout: split
+      console:
+        enabled: true
+        vendor: octant
+      editor:
+        enabled: true
+      registry:
+        enabled: true
+      docker:
+        enabled: true
+    ingresses:
+      - name: eureka
+        port: 8761
+      - name: authgateway
+        port: 8080
+      - name: k8s-blueorgreenfrontend
+        protocol: http
+        host: blueorgreenfrontend.$(session_namespace).svc.cluster.local
+        port: 80
+      - name: k8s-blueorgreenauthgateway
+        protocol: http
+        host: blueorgreenauthgateway.$(session_namespace).svc.cluster.local
+        port: 80
+      - name: k8s-blueorgreengateway
+        protocol: http
+        host: blueorgreengateway.$(session_namespace).svc.cluster.local
+        port: 80
+  environment:
+    objects:
+    - apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        name: tarball-data
+        namespace: $(workshop_namespace)
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 500Mi
+    - apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: files
+        namespace: $(workshop_namespace)
+      spec:
+        replicas: 1
+        selector:
+          matchLabels:
+            deployment: files
+        strategy:
+          type: Recreate
+        template:
+          metadata:
+            labels:
+              deployment: files
+          spec:
+            containers:
+            - name: nginx
+              image: springone-tour-lab-workshop-2
+    - apiVersion: v1
+      kind: Service
+      metadata:
+        name: files
+        namespace: $(workshop_namespace)
+      spec:
+        type: ClusterIP
+        ports:
+        - port: 80
+          protocol: TCP
+          targetPort: 8080
+        selector:
+          deployment: files

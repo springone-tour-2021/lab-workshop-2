@@ -1,28 +1,11 @@
 # Educates Workshop Template Repo
 
-## Note
-After using `make` to build your application, you can check the status of the 
-resources in the namespace `eduk8s` for the status of your workshop. 
-You can check with:
-```bash
-kubectl get all -n eduk8s   
-```
-Or also check with
-```bash
-kubectl api-resoureces | grep eduk8s
-```
-It takes a few minutes for everything to install on your cluster,but when finished you can get the URL to your workshop with the following:
-```bash
-kubectl get trainingportal
-``` 
-
-
 This repo is intended to be used as an easy way to duplicate and then add
 your workshop specific content that would run on Educates.
 
 ## Requirements
 * [Docker Desktop](https://www.docker.com/get-started)
-* [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
+* [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) version `1.21` or greater
 * [Kind](https://kind.sigs.k8s.io/)
 
 ## Commands
@@ -38,13 +21,25 @@ make reload
 ```
 make refresh
 ```
-### Shut everything down
+After running the refresh, run `update-workshop` in your workshop terminal
+window and refresh the browser. The educates documentation has more details on
+[live updates to content](https://docs.edukates.io/en/latest/workshop-content/working-on-content.html#live-updates-to-the-content)
+ as well.
+### Stop an existing educates cluster
 ```
-make kind-stop
+make stop
 ```
-## Starting without rebuilding images
+## Start a previously stopped educates cluster
 ```
-make kind-start
+make start
+```
+## Delete local educates cluster
+```
+make delete
+```
+## Delete local educates cluster and local registry
+```
+make clean
 ```
 ## Resources
 

@@ -1,0 +1,16 @@
+# See https://docs.edukates.io/en/latest/runtime-environment/training-portal.html
+apiVersion: training.eduk8s.io/v1alpha1
+kind: TrainingPortal
+metadata:
+  name: springone-tour-lab-workshop-2
+spec:
+  portal:
+    registration:
+      type: anonymous
+    updates:
+      workshop: true
+  workshops:
+  - name: springone-tour-lab-workshop-2
+    capacity: 1
+    expires: 180m
+    orphaned: 5m

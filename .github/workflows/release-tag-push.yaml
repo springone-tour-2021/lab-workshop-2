@@ -1,0 +1,31 @@
+name: Mark Release Image for Environment Deployment
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment'
+        required: true
+        default: 'staging'
+      # work around until release tags are available https://github.community/t/select-tag-release-when-running-workflow-dispatch/132970
+      version:
+        description: 'Existing Release Tag'
+        required: true
+        default: 'vMajor.Minor.Bugfix'
+jobs:
+  build:
+    name: Tag
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Login to GitHub Package Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Add environment tag to release and push
+        env:
+          VERSION: ${{ steps.extract_tag.outputs.tag }}
+        run: |
+          make deploy version=${{ github.event.inputs.version }} environment=${{ github.event.inputs.environment }}

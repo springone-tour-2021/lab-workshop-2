@@ -4,13 +4,10 @@ name: My Workshop
 modules:
   activate:
   - intro
+  - setup-environment
   - exercises/01-lab01
   - exercises/02-lab02
   - exercises/03-lab03
   - exercises/04-lab04
   - exercises/05-lab05
-  - exercises/05-lab06
-  - exercises/05-lab07
-  - exercises/05-lab08
-  - exercises/05-lab09
   - closure
