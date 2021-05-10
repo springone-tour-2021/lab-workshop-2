@@ -1,9 +1,9 @@
 # Lift & Shift the Color Application to Kubernetes - Step 1
 
-The color application represents a "heritage" application - an existing application that is presumably running in production and is satisfying business needs. 
+The Color Application represents a "heritage" application - an existing application that is presumably running in production and is satisfying business needs. 
 However, the company is modernizing infrastructure, and operational benefit can be gained from running the application on Kubernetes.
 
-Throughout the following exercises, you will "lift and shift" the color application to Kubernetes, with minimal changes. 
+Throughout the following exercises, you will "lift and shift" the Color Application to Kubernetes, with minimal changes. 
 
 ## Spring Cloud Kubernetes
 
