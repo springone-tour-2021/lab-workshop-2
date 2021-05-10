@@ -10,6 +10,20 @@ modules:
     name: App Overview
   exercises/02-lab02:
     name: Run Locally
+  exercises/02-lab02a:
+    name: Start Backend Apps
+  exercises/02-lab02b:
+    name: Start Frontend and Gateway Apps
+  exercises/02-lab02c:
+    name: Test The Color Application
+  exercises/02-lab02d:
+    name: Understand Color Application Behavior
+  exercises/02-lab02e:
+    name: Externalized Configuration
+  exercises/02-lab02f:
+    name: Service Discovery & Premium Configuration
+  exercises/02-lab02g:
+    name: Run Locally
   exercises/03-lab03:
     name: Deploy To Kubernetes - Step 1
   exercises/04-lab04:

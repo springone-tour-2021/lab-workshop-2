@@ -7,6 +7,13 @@ modules:
   - setup-environment
   - exercises/01-lab01
   - exercises/02-lab02
+  - exercises/02-lab02a
+  - exercises/02-lab02b
+  - exercises/02-lab02c
+  - exercises/02-lab02d
+  - exercises/02-lab02e
+  - exercises/02-lab02f
+  - exercises/02-lab02g
   - exercises/03-lab03
   - exercises/04-lab04
   - exercises/05-lab05
