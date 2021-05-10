@@ -26,9 +26,35 @@ modules:
     name: Run Locally
   exercises/03-lab03:
     name: Deploy To Kubernetes - Step 1
+  exercises/03-lab03a:
+    name: Review Premium Service Configuration
+  exercises/03-lab03b:
+    name: Build Container Images
+  exercises/03-lab03c:
+    name: Publish Images To Registry
+  exercises/03-lab03d:
+    name: OPTIONAL - Inspect Images
   exercises/04-lab04:
     name: Deploy To Kubernetes - Step 2
+  exercises/04-lab04a:
+    name: Configuration - Auth Gateway, Routing Gateway, Frontend
+  exercises/04-lab04b:
+    name: Configuration - Backend
+  exercises/04-lab04c:
+    name: Liveness & Readiness Probes
+  exercises/04-lab04d:
+    name: Templating The `bluegreenservice` Deployment
+  exercises/04-lab04e:
+    name: Create Service Manifests
+  exercises/04-lab04f:
+    name: Create An Ingress For The Auth Gateway
+  exercises/04-lab04g:
+    name: Deploying The Applications
   exercises/05-lab05:
+    name: Re-deploy To Kubernetes Without Spring Cloud Kubernetes
+  exercises/05-lab05a:
+    name: Re-deploy To Kubernetes Without Spring Cloud Kubernetes
+  exercises/05-lab05b:
     name: Re-deploy To Kubernetes Without Spring Cloud Kubernetes
   closure:
     name: Conclusion

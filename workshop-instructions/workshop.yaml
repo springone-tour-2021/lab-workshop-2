@@ -15,6 +15,10 @@ modules:
   - exercises/02-lab02f
   - exercises/02-lab02g
   - exercises/03-lab03
+  - exercises/03-lab03a
+  - exercises/03-lab03b
+  - exercises/03-lab03c
+  - exercises/03-lab03d
   - exercises/04-lab04
   - exercises/05-lab05
   - closure
