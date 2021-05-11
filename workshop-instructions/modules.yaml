@@ -10,52 +10,52 @@ modules:
     name: App Overview
   exercises/02-lab02:
     name: Run Locally
-  exercises/02-lab02a:
+  exercises/03-lab02a:
     name: Start Backend Apps
-  exercises/02-lab02b:
+  exercises/04-lab02b:
     name: Start Frontend and Gateway Apps
-  exercises/02-lab02c:
+  exercises/05-lab02c:
     name: Test The Color Application
-  exercises/02-lab02d:
+  exercises/06-lab02d:
     name: Understand Color Application Behavior
-  exercises/02-lab02e:
+  exercises/07-lab02e:
     name: Externalized Configuration
-  exercises/02-lab02f:
+  exercises/08-lab02f:
     name: Service Discovery & Premium Configuration
-  exercises/02-lab02g:
+  exercises/09-lab02g:
     name: Run Locally
-  exercises/03-lab03:
+  exercises/10-lab03:
     name: Deploy To Kubernetes - Step 1
-  exercises/03-lab03a:
+  exercises/11-lab03a:
     name: Review Premium Service Configuration
-  exercises/03-lab03b:
+  exercises/12-lab03b:
     name: Build Container Images
-  exercises/03-lab03c:
+  exercises/13-lab03c:
     name: Publish Images To Registry
-  exercises/03-lab03d:
+  exercises/14-lab03d:
     name: OPTIONAL - Inspect Images
-  exercises/04-lab04:
+  exercises/15-lab04:
     name: Deploy To Kubernetes - Step 2
-  exercises/04-lab04a:
+  exercises/16-lab04a:
     name: Configuration - Auth Gateway, Routing Gateway, Frontend
-  exercises/04-lab04b:
+  exercises/17-lab04b:
     name: Configuration - Backend
-  exercises/04-lab04c:
+  exercises/18-lab04c:
     name: Liveness & Readiness Probes
-  exercises/04-lab04d:
+  exercises/19-lab04d:
     name: Templating The `bluegreenservice` Deployment
-  exercises/04-lab04e:
+  exercises/20-lab04e:
     name: Create Service Manifests
-  exercises/04-lab04f:
+  exercises/21-lab04f:
     name: Create An Ingress For The Auth Gateway
-  exercises/04-lab04g:
+  exercises/22-lab04g:
     name: Deploying The Applications
-  exercises/05-lab05:
-    name: Re-deploy To Kubernetes Without Spring Cloud Kubernetes
-  exercises/05-lab05a:
-    name: Re-deploy To Kubernetes Without Spring Cloud Kubernetes
-  exercises/05-lab05b:
-    name: Re-deploy To Kubernetes Without Spring Cloud Kubernetes
+  exercises/23-lab05:
+    name: Removing Spring Cloud Kubernetes And Relying On Kubernetes
+  exercises/24-lab05a:
+    name: Remove The Use Of Spring Cloud LoadBalancer
+  exercises/25-lab05b:
+    name: Test The Color Application
   closure:
     name: Conclusion
     exit_sign: Finish Workshop
