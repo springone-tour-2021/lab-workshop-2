@@ -432,7 +432,6 @@ docker images | grep pk
 
 Your output should look like this.
 ```
-[~/color-app]$  docker images | grep pk
 blueorgreenfrontend        pk               edb691597d36   41 years ago    317MB
 authgateway                pk               81d9a9bf36c3   41 years ago    320MB
 blueorgreengateway         pk               d3b4256e51c1   41 years ago    320MB
