@@ -39,7 +39,7 @@ modules:
   exercises/16-lab04a:
     name: Configuration - Auth Gateway, Routing Gateway, Frontend
   exercises/17-lab04b:
-    name: Configuration - Backend
+    name: Configuration - `blueorgreenservice`
   exercises/18-lab04c:
     name: Liveness & Readiness Probes
   exercises/19-lab04d:
