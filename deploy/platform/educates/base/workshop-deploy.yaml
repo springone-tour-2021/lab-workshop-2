@@ -76,17 +76,6 @@ spec:
         port: 80
   environment:
     objects:
-    - apiVersion: v1
-      kind: PersistentVolumeClaim
-      metadata:
-        name: tarball-data
-        namespace: $(workshop_namespace)
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 500Mi
     - apiVersion: apps/v1
       kind: Deployment
       metadata:
