@@ -27,7 +27,7 @@ Select the **Editor** tab now to display it, or click on the action block below.
 name: Editor
 ```
 
-#### Kubernetes Console (Ocant)
+#### Kubernetes Console (Octant)
 You will have the ability to inspect your Kubernetes cluster with [Octant](https://github.com/vmware-tanzu/octant), an Open Source developer-centric web interface for Kubernetes that lets you inspect a Kubernetes cluster and its applications.
 
 You haven't deployed anything to Kubernetes so there isn't much to display at the moment, but you can take a quick look at the dashboard now and come back to it later in the workshop.

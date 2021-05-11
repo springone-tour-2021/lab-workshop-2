@@ -14,20 +14,24 @@ modules:
   - exercises/07-lab02e
   - exercises/08-lab02f
   - exercises/09-lab02g
-  - exercises/10-lab03
-  - exercises/11-lab03a
-  - exercises/12-lab03b
-  - exercises/13-lab03c
-  - exercises/14-lab03d
-  - exercises/15-lab04
-  - exercises/16-lab04a
-  - exercises/17-lab04b
-  - exercises/18-lab04c
-  - exercises/19-lab04d
-  - exercises/20-lab04e
-  - exercises/21-lab04f
-  - exercises/22-lab04g
-  - exercises/23-lab05
-  - exercises/24-lab05a
-  - exercises/25-lab05b
+  - exercises/10-lab02h
+  - exercises/11-lab03
+  - exercises/12-lab03a
+  - exercises/13-lab03b
+  - exercises/14-lab03c
+  - exercises/15-lab03d
+  - exercises/16-lab03e
+  - exercises/17-lab03f
+  - exercises/18-lab03g
+  - exercises/19-lab03h
+  - exercises/20-lab03i
+  - exercises/21-lab03j
+  - exercises/22-lab03k
+  - exercises/23-lab03l
+  - exercises/24-lab03m
+  - exercises/25-lab04
+  - exercises/26-lab04a
+  - exercises/27-lab04b
+  - exercises/28-lab04c
+  - exercises/29-lab04d
   - closure
