@@ -10,12 +10,52 @@ modules:
     name: App Overview
   exercises/02-lab02:
     name: Run Locally
-  exercises/03-lab03:
+  exercises/03-lab02a:
+    name: Start Backend Apps
+  exercises/04-lab02b:
+    name: Start Frontend and Gateway Apps
+  exercises/05-lab02c:
+    name: Test The Color Application
+  exercises/06-lab02d:
+    name: Understand Color Application Behavior
+  exercises/07-lab02e:
+    name: Externalized Configuration
+  exercises/08-lab02f:
+    name: Service Discovery & Premium Configuration
+  exercises/09-lab02g:
+    name: Run Locally
+  exercises/10-lab03:
     name: Deploy To Kubernetes - Step 1
-  exercises/04-lab04:
+  exercises/11-lab03a:
+    name: Review Premium Service Configuration
+  exercises/12-lab03b:
+    name: Build Container Images
+  exercises/13-lab03c:
+    name: Publish Images To Registry
+  exercises/14-lab03d:
+    name: OPTIONAL - Inspect Images
+  exercises/15-lab04:
     name: Deploy To Kubernetes - Step 2
-  exercises/05-lab05:
-    name: Re-deploy To Kubernetes Without Spring Cloud Kubernetes
+  exercises/16-lab04a:
+    name: Configuration - Auth Gateway, Routing Gateway, Frontend
+  exercises/17-lab04b:
+    name: Configuration - `blueorgreenservice`
+  exercises/18-lab04c:
+    name: Liveness & Readiness Probes
+  exercises/19-lab04d:
+    name: Templating The `bluegreenservice` Deployment
+  exercises/20-lab04e:
+    name: Create Service Manifests
+  exercises/21-lab04f:
+    name: Create An Ingress For The Auth Gateway
+  exercises/22-lab04g:
+    name: Deploying The Applications
+  exercises/23-lab05:
+    name: Removing Spring Cloud Kubernetes And Relying On Kubernetes
+  exercises/24-lab05a:
+    name: Remove The Use Of Spring Cloud LoadBalancer
+  exercises/25-lab05b:
+    name: Test The Color Application
   closure:
     name: Conclusion
     exit_sign: Finish Workshop
