@@ -7,8 +7,7 @@
 #cd $temp_dir
 #
 ## Download libraries for Color Application apps
-#git clone https://github.com/springone-tour-2021/color-app.git app
-#git checkout tags/1.0
+#git clone -b 1.0 https://github.com/springone-tour-2021/color-app.git app
 #
 ## Download maven dependencies
 #cd app/blueorgreenservice && ./mvnw dependency:go-offline
