@@ -1,22 +1,10 @@
-##!/bin/bash
-#
-#start_dir=$(PWD)
-#temp_dir=temp-m2-repo
-#
-#mkdir -p $temp_dir
-#cd $temp_dir
-#
-## Download libraries for Color Application apps
-#git clone https://github.com/springone-tour-2021/gateway-s1p-2018.git app
-#
-## Download maven dependencies
-#cd app/blueorgreenservice && ./mvnw dependency:go-offline
-#cd ../blueorgreenfrontend && ./mvnw dependency:go-offline
-#cd ../blueorgreengateway && ./mvnw dependency:go-offline
-#cd ../authgateway && ./mvnw dependency:go-offline
-#cd ../eurekaserver && ./mvnw dependency:go-offline
-#cd ../configserver && ./mvnw dependency:go-offline
-#
-## Cleanup
-#cd $start_dir
-#rm -rf $temp_dir
+#!/bin/bash
+
+# Download maven dependencies for color-app
+git clone -b 1.0 https://github.com/springone-tour-2021/color-app.git app-temp
+cd app-temp/blueorgreenservice && ./mvnw dependency:go-offline
+cd ../blueorgreenfrontend && ./mvnw dependency:go-offline
+cd ../blueorgreengateway && ./mvnw dependency:go-offline
+cd ../authgateway && ./mvnw dependency:go-offline
+cd ../..
+rm -rf app-temp

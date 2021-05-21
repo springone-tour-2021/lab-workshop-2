@@ -17,7 +17,8 @@ installEducates() {
         EDUCATES_YAML_ORIGINAL=$(kubectl kustomize github.com/eduk8s/eduk8s?ref=${EDUCATES_VERSION})
         EDUCATES_OPERATOR_IMAGE=$(echo "${EDUCATES_YAML_ORIGINAL}" | grep eduk8s-operator: | awk '{print $2}')
         EDUCATES_PORTAL_IMAGE=$(echo "${EDUCATES_YAML_ORIGINAL}" | grep eduk8s-portal: | awk '{print $2}' | sed s/'$(image_repository)'/"quay.io\\/eduk8s"/g)
-        EDUCATES_WORKSHOP_BASE_IMAGE=$(echo "${EDUCATES_YAML_ORIGINAL}" | grep base-environment: | awk '{print $2}' | sed s/'$(image_repository)'/"quay.io\\/eduk8s"/g)
+#        EDUCATES_WORKSHOP_BASE_IMAGE=$(echo "${EDUCATES_YAML_ORIGINAL}" | grep base-environment: | awk '{print $2}' | sed s/'$(image_repository)'/"quay.io\\/eduk8s"/g)
+        EDUCATES_WORKSHOP_BASE_IMAGE=$(echo "${EDUCATES_YAML_ORIGINAL}" | grep jdk11-environment: | awk '{print $2}' | sed s/'$(image_repository)'/"quay.io\\/eduk8s"/g)
 
         echo "===== Pulling Educates images to cache"
         docker pull "${EDUCATES_OPERATOR_IMAGE}"

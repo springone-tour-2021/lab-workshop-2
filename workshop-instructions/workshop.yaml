@@ -7,7 +7,31 @@ modules:
   - setup-environment
   - exercises/01-lab01
   - exercises/02-lab02
-  - exercises/03-lab03
-  - exercises/04-lab04
-  - exercises/05-lab05
+  - exercises/03-lab02a
+  - exercises/04-lab02b
+  - exercises/05-lab02c
+  - exercises/06-lab02d
+  - exercises/07-lab02e
+  - exercises/08-lab02f
+  - exercises/09-lab02g
+  - exercises/10-lab02h
+  - exercises/11-lab03
+  - exercises/12-lab03a
+  - exercises/13-lab03b
+  - exercises/14-lab03c
+  - exercises/15-lab03d
+  - exercises/16-lab03e
+  - exercises/17-lab03f
+  - exercises/18-lab03g
+  - exercises/19-lab03h
+  - exercises/20-lab03i
+  - exercises/21-lab03j
+  - exercises/22-lab03k
+  - exercises/23-lab03l
+  - exercises/24-lab03m
+  - exercises/25-lab04
+  - exercises/26-lab04a
+  - exercises/27-lab04b
+  - exercises/28-lab04c
+  - exercises/29-lab04d
   - closure

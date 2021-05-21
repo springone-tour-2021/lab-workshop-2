@@ -7,15 +7,63 @@ modules:
     name: Workshop Environment
     exit_sign: Start Workshop
   exercises/01-lab01:
-    name: Lab 01
+    name: App Overview
   exercises/02-lab02:
-    name: Lab 02
-  exercises/03-lab03:
-    name: Lab 03
-  exercises/04-lab04:
-    name: Lab 04
-  exercises/05-lab05:
-    name: Lab 05
+    name: Lab 1 - Run Locally
+  exercises/03-lab02a:
+    name: Start Config And Discovery Servers
+  exercises/04-lab02b:
+    name: Start Backend Apps
+  exercises/05-lab02c:
+    name: Start Frontend and Gateway Apps
+  exercises/06-lab02d:
+    name: Test The Color Application
+  exercises/07-lab02e:
+    name: Understand Color Application Behavior
+  exercises/08-lab02f:
+    name: Understand Color Application Behavior, Continued
+  exercises/09-lab02g:
+    name: Understand Color Application Behavior, Continued
+  exercises/10-lab02h:
+    name: Shut Down The Applications
+  exercises/11-lab03:
+    name: Lab 2 - Deploy To Kubernetes
+  exercises/12-lab03a:
+    name: Spring Cloud Kubernetes
+  exercises/13-lab03b:
+    name: Refactor Premium Service Routing
+  exercises/14-lab03c:
+    name: Build Container Images
+  exercises/15-lab03d:
+    name: Publish Images To Registry
+  exercises/16-lab03e:
+    name: Inspect Images (OPTIONAL)
+  exercises/17-lab03f:
+    name: Create Deployment Manifests
+  exercises/18-lab03g:
+    name: Mount Configuration - Frontend and Gateway Apps
+  exercises/19-lab03h:
+    name: Mount Configuration - Backend
+  exercises/20-lab03i:
+    name: Liveness & Readiness Probes
+  exercises/21-lab03j:
+    name: Templating The Backend Deployment
+  exercises/22-lab03k:
+    name: Create Service Manifests
+  exercises/23-lab03l:
+    name: Create An Ingress For The Auth Gateway
+  exercises/24-lab03m:
+    name: Deploy And Test The Application
+  exercises/25-lab04:
+    name: Lab 3 - Deploy To Kubernetes Without Spring Cloud Kubernetes
+  exercises/26-lab04a:
+    name: Remove Spring Cloud Kubernetes Dependencies
+  exercises/27-lab04b:
+    name: Remove Spring Cloud LoadBalancer
+  exercises/28-lab04c:
+    name: Rebuild and Redeploy The Application
+  exercises/29-lab04d:
+    name: Test The Application
   closure:
     name: Conclusion
     exit_sign: Finish Workshop

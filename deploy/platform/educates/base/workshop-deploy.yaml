@@ -14,9 +14,7 @@ spec:
     # Use the default image, one of the pre-existing ones, or you can build your own
     # https://docs.edukates.io/en/develop/runtime-environment/workshop-definition.html#container-image-for-the-workshop
     files: http://files.$(workshop_namespace).svc.cluster.local/workshop.tar.gz
-#    image: quay.io/eduk8s/jdk11-environment:210217.091829.d9293c8
-#    image: docker.io/ciberkleid/eduk8s-s1t2021-wkshp2-env
-    image: projects.registry.vmware.com/springonetour/eduk8s-s1t2021-wkshp2-env
+    image: jdk11-environment:*
   session:
     objects:
     - apiVersion: rbac.authorization.k8s.io/v1
@@ -43,7 +41,7 @@ spec:
           resources: ["configmaps", "pods", "services", "endpoints", "secrets"]
           verbs: ["get", "list", "watch"]
     resources:
-      memory: 1.7Gi
+      memory: 3Gi
     applications:
       terminal:
         enabled: true
@@ -76,17 +74,6 @@ spec:
         port: 80
   environment:
     objects:
-    - apiVersion: v1
-      kind: PersistentVolumeClaim
-      metadata:
-        name: tarball-data
-        namespace: $(workshop_namespace)
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 500Mi
     - apiVersion: apps/v1
       kind: Deployment
       metadata:
