@@ -41,7 +41,7 @@ spec:
           resources: ["configmaps", "pods", "services", "endpoints", "secrets"]
           verbs: ["get", "list", "watch"]
     resources:
-      memory: 3Gi
+      memory: 2.0Gi
     applications:
       terminal:
         enabled: true
