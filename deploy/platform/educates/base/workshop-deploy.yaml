@@ -41,13 +41,13 @@ spec:
           resources: ["configmaps", "pods", "services", "endpoints", "secrets"]
           verbs: ["get", "list", "watch"]
     resources:
-      memory: 2.0Gi
+      memory: 1.8Gi
     applications:
       terminal:
         enabled: true
         layout: split
       console:
-        enabled: true
+        enabled: false
         vendor: octant
       editor:
         enabled: true
