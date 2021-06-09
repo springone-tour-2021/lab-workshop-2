@@ -25,11 +25,11 @@ find "$EXT_DIR" -type d -name 'humao.rest-client-*' -exec rm -r {} +
 find "$EXT_DIR" -type d -name 'ms-kubernetes-tools.vscode-kubernetes-tools-*' -exec rm -r {} +
 find "$EXT_DIR" -type d -name 'ms-python.python-*' -exec rm -r {} +
 find "$EXT_DIR" -type d -name 'pivotal.vscode-spring-boot-*' -exec rm -r {} +
-find "$EXT_DIR" -type d -name 'redhat.java-*' -exec rm -r {} +
 find "$EXT_DIR" -type d -name 'redhat.vscode-xml-*' -exec rm -r {} +
 find "$EXT_DIR" -type d -name 'redhat.vscode-yaml-*' -exec rm -r {} +
+find "$EXT_DIR" -type d -name 'vscjava.vscode-java-test-*' -exec rm -r {} +
 find "$EXT_DIR" -type d -name 'vscjava.vscode-java-debug-*' -exec rm -r {} +
 find "$EXT_DIR" -type d -name 'vscjava.vscode-java-dependency-*' -exec rm -r {} +
-find "$EXT_DIR" -type d -name 'vscjava.vscode-java-test-*' -exec rm -r {} +
 find "$EXT_DIR" -type d -name 'vscjava.vscode-maven-*' -exec rm -r {} +
 find "$EXT_DIR" -type d -name 'vscjava.vscode-spring-initializr-*' -exec rm -r {} +
+find "$EXT_DIR" -type d -name 'redhat.java-*' -exec rm -r {} +
